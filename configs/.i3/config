@@ -18,6 +18,7 @@ exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
 exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
 exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
 exec xrdb ~/.Xresources
+exec --no-startup-id xsetroot -solid "#073642"
 
 #startup stuff
 exec redshift -l 55.7:12.6 -t 5700:3600 -g 0.8 -m vidmode -v
