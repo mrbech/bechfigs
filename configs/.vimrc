@@ -56,17 +56,9 @@ map <Leader> <Plug>(easymotion-prefix)
 
 "vim2hs
 let g:haskell_conceal_wide = 1
-
-" Syntastic
-let g:syntastic_check_on_w = 1
-
-"Haskell ghc-mod
-" Reload
-map <silent> tu :call GHC_BrowseAll()<CR>
-" Type Lookup
-map <silent> tw :call GHC_ShowType(1)<CR>
+let g:haskell_conceal_bad = 1
 
 "Haskell hdevtools
-au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
-au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType <RETURN>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear <RETURN>
+au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo <RETURN>
