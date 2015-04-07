@@ -34,9 +34,6 @@ nnoremap <C-H> <C-W><C-H>
 " Searching
 set incsearch
 
-" Completetion
-set omnifunc=syntaxcomplete#Complete
-
 "Fold
 nnoremap <space> za
 
@@ -47,9 +44,6 @@ nnoremap <space> za
 " Airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
-
-" Supertab
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 " Easymotion
 map <Leader> <Plug>(easymotion-prefix)
