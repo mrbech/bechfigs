@@ -37,6 +37,9 @@ set incsearch
 "Fold
 nnoremap <space> za
 
+"Markdown
+au BufRead,BufNewFile *.md set filetype=markdown tw=80 spell
+
 """""""""""
 " PLUGINS "
 """""""""""
