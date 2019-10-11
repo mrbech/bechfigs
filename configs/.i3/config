@@ -14,10 +14,6 @@ set $mod Mod4
 #xorg stuff
 #exec setxkbmap -layout dk
 exec setxkbmap -layout us
-exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
-exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
-exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
-exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
 exec xrdb ~/.Xresources
 
 #danish keyboard
@@ -29,10 +25,13 @@ exec redshift -l 55.7:12.6 -t 5700:3600 -g 0.8 -m vidmode -v
 exec --no-startup-id xsetroot -solid "#073642"
 bindsym $mod+c exec google-chrome-stable
 bindsym $mod+p exec pavucontrol 
+bindsym $mod+m move workspace to output left
+bindsym $mod+n open
 
 #sound
-bindsym XF86AudioLowerVolume exec amixer set Master playback 1- 
-bindsym XF86AudioRaiseVolume exec amixer set Master playback 1+
+bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume 0 +5%
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 #play
 bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 
@@ -44,6 +43,10 @@ bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 
 # Stop
 bindsym XF86AudioStop exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 exec pa-applet
 # font for window titles. ISO 10646 = Unicode
