@@ -1,3 +1,5 @@
+export PROJECT_DIR=$HOME/projects
+
 [[ -f ~/.zshrc ]] && source ~/.zshrc
 
 #Add bin if it exists
@@ -33,13 +35,23 @@ if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
     logout
 fi
 
+function humanpdf() {
+    qpdf $1 --qdf - | nvim - -b
+}
+
+function pdftext() {
+  gs -sDEVICE=txtwrite -o - $1
+}
+
 export PATH="/usr/sbin:$PATH"
+export PATH="/opt/flutter/bin:$PATH"
+export PATH="/opt/flutter/bin/cache/dart-sdk/bin:$PATH"
+export PATH="$PATH":"/opt/flutter/.pub-cache/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export CHROME_EXECUTABLE=google-chrome-stable
+export GIT_EDITOR=nvim
 
-#Ruby
-export PATH="`ruby -rubygems -e 'puts Gem.user_dir'`/bin:$PATH"
-
-#Java
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
-
-#Hadoop
-export HADOOP_CLASSPATH=$JAVA_HOME/lib/tools.jar
+source /home/mrb/.ghc-wasm/env

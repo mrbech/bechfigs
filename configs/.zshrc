@@ -51,7 +51,7 @@ man() {
 }
 
 export PS1='%B%F{2}%n@%m%f%b:%B%F{4}%~%f%b
-%# '
+λ '
 
 bindkey '\e[1~'  beginning-of-line
 bindkey '\e[4~'  end-of-line
@@ -68,6 +68,8 @@ bindkey '\e\e[D' backward-word
 bindkey '\e[Z'   reverse-menu-complete
 bindkey '\e[7~' beginning-of-line
 bindkey '\e[8~' end-of-line
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
 
 _force_rehash() {
   (( CURRENT == 1 )) && rehash

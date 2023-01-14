@@ -17,3 +17,6 @@ alias pdf='zathura'
 alias findsplot='sudo arp-scan --interface=eth0 --destaddr=90:59:af:64:85:fe --localnet'
 alias renet='sudo pdnsd-ctl server 0 retest'
 alias nsqor="EXTRA_DOCKER_OPTS='-e DEV_ADDR=http://localhost:8080 -it' ./run"
+alias clip="xclip -selection c"
+alias darkmode="cat ~/.config/alacritty/general.yml ~/.config/alacritty/dark.yml > ~/.config/alacritty/alacritty.yml"
+alias lightmode="cat ~/.config/alacritty/general.yml ~/.config/alacritty/light.yml > ~/.config/alacritty/alacritty.yml"
